@@ -18,8 +18,8 @@ function mainFunc () {
 		addCloud(text);
 		var imag = "#imgCloud"+(count-1);
 		var txt = "#textCloud"+(count-1);
-		$(imag).fadeOut(time*1000, "linear");
-		$(txt).fadeOut(time*1000, "linear");
+		$(imag).add($(txt)).fadeOut(time*1000, "linear");
+		//$(txt).fadeOut(time*1000, "linear");
 	}
 }
 
