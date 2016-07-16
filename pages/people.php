@@ -26,7 +26,7 @@
 
   <body>
 
- <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -35,20 +35,20 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Comfort Box <span class="glyphicon glyphicon-gift"></span></a>
+          <a class="navbar-brand" href="#">Comfort Box</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-left">
-            <li><a href="index.html">Home <span class="glyphicon glyphicon-home"></span></a></li>
-            <li><a href="mybox.html">My Box <span class="glyphicon glyphicon-star"></span></a></li>
-          	<li><a href="./vent.html">Vent Cloud <span class="glyphicon glyphicon-cloud"></span></a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="mybox.html">My Box</a></li>
+          	<li><a href="#">Vent Cloud</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <button type="submit" class="btn btn-primary">Log out</button>
           </form>
         </div>
       </div>
-    </nav>   
+    </nav>    
 
     <div class="container-fluid">
       <div class="row">
@@ -132,7 +132,32 @@
 	          <br>
 	          <button id = "addContact" class="btn btn-primary" onclick="addContact()">Add contact</button>
 	      </fieldset>
-	     
+	      <?php
+$servername = "localhost:8888";
+$username = "root";
+$password = "root";
+$dbname = "linkedInHackDay";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT Name, PhoneNumber, Email FROM contact";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "id: " . $row["Email"]. " - Name: " . $row["Name"]. " " . $row["PhoneNumber"]. "<br>";
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
+?>
         </div>
       </div>
     </div>
