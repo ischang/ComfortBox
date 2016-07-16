@@ -7,6 +7,8 @@ Caroline Ho, Stephanie Chang, Priyanka Uppu, Vibhi Jhi
 #Features
 Users create a comfort box with embedded videos, images, and quotes of their favorite things or activities that cheer them up or calm them during times of duress or need. They can also add a list of people they can call in their contacts list, along with a list of hotlines readily available on the page.
 
+If users want to share how they feel, they can anonymously write a note in the Vent Cloud, where their message will appear publicly for up to 3 minutes before fading away – hopefully along with their worries!
+
 #Additional Features to Add
 -Panic Button
 -Prettying up the popup alerts
