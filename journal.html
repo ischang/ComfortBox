@@ -26,7 +26,7 @@
 
   <body>
 
- <nav class="navbar navbar-inverse navbar-fixed-top">
+   <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -57,82 +57,36 @@
             <li><a href="mybox.html">Overview</a></li>
           </ul>
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="people.html" id = "pg1">People who care</a></li>
+            <li><a href="people.html">People who care</a></li>
             <li><a href="videos.html">Videos and music</a></li>
-            <li><a href="photographs.html" >Photographs</a></li>
+            <li><a href="photographs.html">Photographs</a></li>
             <li><a href="activities.html">Activities to do</a></li>
-            <li><a href="journal.html">My journal</a></li>
+            <li class="active"><a href="journal.html">My journal</a></li>
           </ul>
         </div>
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id="pg">
-          <h1 class="page-header" id="section-title">People who care</h1>
+          <h1 class="page-header" id="section-title">My journal</h1>
           <div id="content">
-            <p class="lead" id="intro">These people would love to hear from you – feel free to reach out!</p>
-            <div class="table-responsive">
-            <table class="table" id="contactTable">
+            <p class="lead" id="intro">Write about how you're feeling and what you're thinking!</p>
+          </div>
+          <div class="table-responsive">
+            <table class="table" id="journalTable">
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Phone</th>
-                  <th>Email</th>
+                  <th>Journal Entries</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Suicide Hotline</td>
-                  <td>1-800-273-TALK</td>
-                  <td> </td>
-                </tr>
-                <tr>
-                  <td>Suicide Chat</td>
-                  <td></td>
-                  <td>Website: crisischat.org</td>
-                </tr>
-                <tr>
-                  <td>Suicide Hotline Spanish</td>
-                  <td>1-888-628-9454</td>
-                  <td> </td>
-                </tr>
-                <tr>
-                  <td>LGBT Hotline</td>
-                  <td>1-888-843-4564</td>
-                  <td> </td>
-                </tr>
-                <tr>
-                  <td>Trans US</td>
-                  <td>877-565-8850</td>
-                  <td> </td>
-                </tr>
-                <tr>
-                  <td>Trans Canada</td>
-                  <td>877-330-6366</td>
-                  <td> </td>
-                </tr>
-                <tr>
-                  <td>Asian American Hotline</td>
-                  <td>1-877-900-8585</td>
-                  <td> </td>
-                </tr>
-                <tr>
-                  <td>Eating Disorders</td>
-                  <td>1-800-931-2237</td>
-                  <td> </td>
-                </tr>
-                
               </tbody>
             </table>
           </div>
-          </div>
           <fieldset class="form-group">
-	          <label for="newName" class="lead">Add a new contact!</label>
-	          <textarea id = "contactName" class="form-control input" id="newName" placeholder="Name" maxlength = "100" rows="1"></textarea>
-              <textarea id = "contactPhone" class="form-control input" id="newPhone" placeholder="Phone number" maxlength = "20" rows="1"></textarea>
-              <textarea id = "contactEmail" class="form-control input" id="newEmail" placeholder="Email" maxlength = "100" rows="1"></textarea>
+	          <label for="newEntry" class="lead">Write a journal entry!</label>
+	          <textarea id = "entryText" class="form-control input" id="newEntry" placeholder="Write whatever you wish!" rows="5"></textarea>
 	          <br>
-	          <button id = "addContact" class="btn btn-primary" onclick="addContact()">Add contact</button>
-	      </fieldset>
-	     
+	          <button id = "addEntry" class="btn btn-primary" onclick="addEntry()">Save entry</button>
+	        </fieldset>
         </div>
       </div>
     </div>
@@ -145,18 +99,14 @@
     <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 
     <script>
-        function addContact() {
-            var table = document.getElementById("contactTable");
+        function addEntry() {
+            var table = document.getElementById("journalTable");
             var row = table.insertRow(1);
+
             var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            var cell3 = row.insertCell(2);
-            cell1.innerHTML = document.getElementById("contactName").value;
-            cell2.innerHTML = document.getElementById("contactPhone").value;
-            cell3.innerHTML = document.getElementById("contactEmail").value;
-            document.getElementById("contactName").value = "";
-            document.getElementById("contactPhone").value = "";
-            document.getElementById("contactEmail").value = "";
+
+            cell1.innerHTML = document.getElementById("entryText").value;
+            document.getElementById("entryText").value = "";
         }
 	</script>
 
